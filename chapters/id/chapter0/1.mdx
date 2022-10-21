@@ -2,33 +2,33 @@
 
 Selamat datang di kursus Hugging Face! Pada sub-bab Pendahuluan, anda akan dibimbing untuk mempersiapkan _working environment_. Jika anda memulai kursus ini untuk pertama kali, anda sangat direkomendasikan untuk menyelesaikan [Bab 1](/course/chapter1) terlebih dahulu. Setelah menyelesaikan [Bab 1](/course/chapter1) anda bisa kembali ke page ini untuk mencoba eksplorasi kodenya secara independen.
 
-Semua modul yang digunakan dalam kursus ini tersedia dalam modul Python. Di kursus ini, anda juga akan dibimbing untuk mempersiapkan Python _environment_ dan menginstall modul-modul yang dibutuhkan.
+Semua modul yang digunakan dalam kursus ini tersedia dalam modul Python. Di kursus ini, anda juga akan dibimbing untuk mempersiapkan Python _environment_ dan menginstal modul-modul yang dibutuhkan.
 
 Ada 2 cara untuk jenis _working environment_ yang bisa anda gunakan, Colab notebook dan _virtual environment_ Python. Anda bebas memilih _working envrionment_, tapi untuk pemula, kami menyarankan untuk menggunakan Colab notebook.
 
-Sebagai catatan, kursus ini tidak akan mencakup instalasi untuk pengguna Windows. Jika anda menggunakan Windows, mohon menggunakan Colab notebook. Jika anda adalah pengguna Linux atau macOS, anda bebas memilih _working environment_ yang akan dijelaskan dibawah.
+Sebagai catatan, kursus ini tidak mencakup instalasi untuk pengguna Windows. Jika anda menggunakan Windows, mohon menggunakan Colab notebook. Jika anda adalah pengguna Linux atau macOS, anda bebas memilih _working environment_ yang akan dijelaskan dibawah.
 
-Most of the course relies on you having a Hugging Face account. We recommend creating one now: [create an account](https://huggingface.co/join).
+Sebagian besar dari kursus ini akan mewajibkan anda untuk memiliki akun Hugging Face. Jika anda belum memiliki akun, silahkan mendaftar terlebih dahulu di tautan berikut [https://huggingface.co/join](https://huggingface.co/join).
 
-## Using a Google Colab notebook
+## Menggunakan Google Colab notebook
 
-Using a Colab notebook is the simplest possible setup; boot up a notebook in your browser and get straight to coding! 
+Menggunakan Colab notebook sangatlah sederhana, cukup dengan membuat notebook baru anda sudah bisa mulai koding!
 
-If you're not familiar with Colab, we recommend you start by following the [introduction](https://colab.research.google.com/notebooks/intro.ipynb). Colab allows you to use some accelerating hardware, like GPUs or TPUs, and it is free for smaller workloads.
+Jika anda belum terbiasa menggunakan Colab, silahkan mengikuti [tutorial pengenalan Colab dari Google](https://colab.research.google.com/notebooks/intro.ipynb) (hanya tersedia dalam Bahasa Inggris). Saat menggunakan Colab, anda dapat mengakses hardware seperti GPU dan TPU yang dapat mengakselerasi proses pengolahan data. Hardware ini dapat anda gunakan secara gratis untuk proyek skala kecil.
 
-Once you're comfortable moving around in Colab, create a new notebook and get started with the setup:
+Setelah terbiasa dengan Colab, buatlah notebook baru dengan setup sebagai berikut:
 
 <div class="flex justify-center">
 <img src="https://huggingface.co/datasets/huggingface-course/documentation-images/resolve/main/en/chapter0/new_colab.png" alt="An empty colab notebook" width="80%"/>
 </div>
 
-The next step is to install the libraries that we'll be using in this course. We'll use `pip` for the installation, which is the package manager for Python. In notebooks, you can run system commands by preceding them with the `!` character, so you can install the 🤗 Transformers library as follows:
+Langkah berikutnya adalah menginstal modul-modul yang akan digunakan dalam kursus ini menggunakan `pip`. `pip` adalah modul manager untuk bahasa pemrograman Python. Di dalam notebook, anda dapat mengakses komando sistem dengan menambahkan tanda seru (`!`) sebelum kode instruksi anda. Contoh instalasi modul 🤗 adalah sebagai berikut:
 
 ```
 !pip install transformers
 ```
 
-You can make sure the package was correctly installed by importing it within your Python runtime:
+Untuk memastikan bahwa modul telah terinstalasi dengan benar, anda perlu mencoba untuk meng-_import_ modul tersebut di _runtime_ Python anda:
 
 ```
 import transformers
@@ -38,13 +38,13 @@ import transformers
 <img src="https://huggingface.co/datasets/huggingface-course/documentation-images/resolve/main/en/chapter0/install.gif" alt="A gif showing the result of the two commands above: installation and import" width="80%"/>
 </div>
 
-This installs a very light version of 🤗 Transformers. In particular, no specific machine learning frameworks (like PyTorch or TensorFlow) are installed. Since we'll be using a lot of different features of the library, we recommend installing the development version, which comes with all the required dependencies for pretty much any imaginable use case:
+Kode instruksi diatas menginstall versi ringan dari 🤗 Transformers. Versi ringan ini tidak mengistall modul _machine learning_ (seperti PyTorch atau TensorFlow). Sangat direkomendasikan untuk mengistal versi _development_ dari modul ini karena nanti anda akan menggunakan berbagai macam fitur yang tersedia didalam modul ini dan versi ini juga akan mencakup berbagai macam modul untuk segala macam kasus yang akan dihadapi dalam kursus ini. Untuk mengistal versi _development_, silahkan eksekusi kode dibawah:
 
 ```
 !pip install transformers[sentencepiece]
 ```
 
-This will take a bit of time, but then you'll be ready to go for the rest of the course!
+Proses instalasi akan berlangsung cukup lama. Tapi saat instalasi selesai, anda sudah siap untuk menyelesaikan kursus ini!
 
 ## Using a Python virtual environment
 

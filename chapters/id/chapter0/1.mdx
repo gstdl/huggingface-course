@@ -1,34 +1,34 @@
-# Introduction
+# Pendahuluan
 
-Welcome to the Hugging Face course! This introduction will guide you through setting up a working environment. If you're just starting the course, we recommend you first take a look at [Chapter 1](/course/chapter1), then come back and set up your environment so you can try the code yourself.
+Selamat datang di kursus Hugging Face! Pada Bab ini, anda akan dibimbing untuk mempersiapkan _working environment_. Jika anda memulai kursus ini untuk pertama kali, anda sangat direkomendasikan untuk menyelesaikan [Bab 1](/course/chapter1) terlebih dahulu. Setelah menyelesaikan [Bab 1](/course/chapter1) anda bisa kembali ke page ini untuk mencoba eksplorasi kodenya secara independen.
 
-All the libraries that we'll be using in this course are available as Python packages, so here we'll show you how to set up a Python environment and install the specific libraries you'll need.
+Semua modul yang digunakan dalam kursus ini tersedia dalam modul Python. Di kursus ini, anda juga akan dibimbing untuk mempersiapkan Python _environment_ dan menginstal modul-modul yang dibutuhkan.
 
-We'll cover two ways of setting up your working environment, using a Colab notebook or a Python virtual environment. Feel free to choose the one that resonates with you the most. For beginners, we strongly recommend that you get started by using a Colab notebook.
+Ada 2 cara untuk jenis _working environment_ yang bisa anda gunakan, Colab notebook dan _virtual environment_ Python. Anda bebas memilih _working envrionment_, tapi untuk pemula, kami menyarankan untuk menggunakan Colab notebook.
 
-Note that we will not be covering the Windows system. If you're running on Windows, we recommend following along using a Colab notebook. If you're using a Linux distribution or macOS, you can use either approach described here.
+Sebagai catatan, kursus ini tidak mencakup instalasi untuk pengguna Windows. Jika anda menggunakan Windows, mohon menggunakan Colab notebook. Jika anda adalah pengguna Linux atau macOS, anda bebas memilih _working environment_ yang akan dijelaskan dibawah.
 
-Most of the course relies on you having a Hugging Face account. We recommend creating one now: [create an account](https://huggingface.co/join).
+Sebagian besar dari kursus ini akan mewajibkan anda untuk memiliki akun Hugging Face. Jika anda belum memiliki akun, silahkan mendaftar terlebih dahulu di tautan berikut [https://huggingface.co/join](https://huggingface.co/join).
 
-## Using a Google Colab notebook
+## Menggunakan Google Colab notebook
 
-Using a Colab notebook is the simplest possible setup; boot up a notebook in your browser and get straight to coding! 
+Menggunakan Colab notebook sangatlah sederhana, cukup dengan membuat notebook baru anda sudah bisa mulai koding!
 
-If you're not familiar with Colab, we recommend you start by following the [introduction](https://colab.research.google.com/notebooks/intro.ipynb). Colab allows you to use some accelerating hardware, like GPUs or TPUs, and it is free for smaller workloads.
+Jika anda belum terbiasa menggunakan Colab, silahkan mengikuti [tutorial pengenalan Colab dari Google](https://colab.research.google.com/notebooks/intro.ipynb) (hanya tersedia dalam Bahasa Inggris). Saat menggunakan Colab, anda dapat mengakses hardware seperti GPU dan TPU yang dapat mengakselerasi proses pengolahan data. Hardware ini dapat anda gunakan secara gratis untuk proyek skala kecil.
 
-Once you're comfortable moving around in Colab, create a new notebook and get started with the setup:
+Setelah terbiasa dengan Colab, buatlah notebook baru dengan setup sebagai berikut:
 
 <div class="flex justify-center">
 <img src="https://huggingface.co/datasets/huggingface-course/documentation-images/resolve/main/en/chapter0/new_colab.png" alt="An empty colab notebook" width="80%"/>
 </div>
 
-The next step is to install the libraries that we'll be using in this course. We'll use `pip` for the installation, which is the package manager for Python. In notebooks, you can run system commands by preceding them with the `!` character, so you can install the 🤗 Transformers library as follows:
+Langkah berikutnya adalah menginstal modul-modul yang akan digunakan dalam kursus ini menggunakan `pip`. `pip` adalah modul manager untuk bahasa pemrograman Python. Di dalam notebook, anda dapat mengakses komando sistem dengan menambahkan tanda seru (`!`) sebelum kode instruksi anda. Contoh instalasi modul 🤗 adalah sebagai berikut:
 
 ```
 !pip install transformers
 ```
 
-You can make sure the package was correctly installed by importing it within your Python runtime:
+Untuk memastikan bahwa modul telah terinstalasi dengan benar, anda perlu mencoba untuk meng-_import_ modul tersebut di _runtime_ Python anda:
 
 ```
 import transformers
@@ -38,38 +38,38 @@ import transformers
 <img src="https://huggingface.co/datasets/huggingface-course/documentation-images/resolve/main/en/chapter0/install.gif" alt="A gif showing the result of the two commands above: installation and import" width="80%"/>
 </div>
 
-This installs a very light version of 🤗 Transformers. In particular, no specific machine learning frameworks (like PyTorch or TensorFlow) are installed. Since we'll be using a lot of different features of the library, we recommend installing the development version, which comes with all the required dependencies for pretty much any imaginable use case:
+Kode instruksi diatas menginstall versi ringan dari 🤗 Transformers. Versi ringan ini tidak mengistall modul _machine learning_ (seperti PyTorch atau TensorFlow). Sangat direkomendasikan untuk mengistal versi _development_ dari modul ini karena nanti anda akan menggunakan berbagai macam fitur yang tersedia didalam modul ini dan versi ini juga akan mencakup berbagai macam modul untuk segala macam kasus yang akan dihadapi dalam kursus ini. Untuk mengistal versi _development_, silahkan eksekusi kode dibawah:
 
 ```
 !pip install transformers[sentencepiece]
 ```
 
-This will take a bit of time, but then you'll be ready to go for the rest of the course!
+Proses instalasi akan berlangsung cukup lama. Tapi saat instalasi selesai, anda sudah siap untuk menyelesaikan kursus ini!
 
-## Using a Python virtual environment
+## Menggunakan Python _virtual environment_
 
-If you prefer to use a Python virtual environment, the first step is to install Python on your system. We recommend following [this guide](https://realpython.com/installing-python/) to get started.
+Jika anda ingin menggunakan Python _virtual environment_, tentu saja langkah pertama yang harus anda lewati adalah menginstal Python. Untuk menginstal Python, bisa mengikuti referensi di tautan [ini](https://realpython.com/installing-python/).
 
-Once you have Python installed, you should be able to run Python commands in your terminal. You can start by running the following command to ensure that it is correctly installed before proceeding to the next steps: `python --version`. This should print out the Python version now available on your system.
+Setelah Python berhasil terinstalasi, anda bisa menjalankan kode Python di terminal anda. Anda bisa memulai dengan mengeksekusi instruksi berikut untuk memastikan bahwa Python terinstalasi dengan benar: `python --version`. Instruksi ini akan menampilkan versi Python yang terinstalasi di komputer anda.
 
-When running a Python command in your terminal, such as `python --version`, you should think of the program running your command as the "main" Python on your system. We recommend keeping this main installation free of any packages, and using it to create separate environments for each application you work on — this way, each application can have its own dependencies and packages, and you won't need to worry about potential compatibility issues with other applications.
+Python yang saat ini terinstalasi di sistem anda adalah versi Python *"utama"* untuk sistem anda. Sangat direkomendasikan untuk tidak mengotak-ngatik Python "utama" di sistem anda, dan untuk setiap aplikasi yang akan dikembangkan menggunakan Python akan lebih baik jika menggunakan versi Python berbeda. Pada umumnya, versi Python yang digunakan untuk pengembangan aplikasi bukanlah versi "utama". Ini dilakukan karena setiap aplikasi menggunakan modul yang berbeda-beda dan setiap modul memiliki ketergantugan satu sama lain. Dengan menggunakan versi berbeda, kekhawatiran terjadinya konflik antar modul dapat dihindari.
 
-In Python this is done with [*virtual environments*](https://docs.python.org/3/tutorial/venv.html), which are self-contained directory trees that each contain a Python installation with a particular Python version alongside all the packages the application needs. Creating such a virtual environment can be done with a number of different tools, but we'll use the official Python package for that purpose, which is called [`venv`](https://docs.python.org/3/library/venv.html#module-venv).
+Penggunaan versi berbeda dari Python dilakukan dengan menggunakan [*virtual environments*](https://docs.python.org/3/tutorial/venv.html). _Virtual environment_ adalah instalasi Python terpisah yang digunakan untuk keperluan tertentu aplikasi. Di dalam virtual environment, versi Python maupun modul-modul yang terinstal akan terisolasi dari versi Python "utama". Terdapata banyak cara untuk membuat _virtual environment_, tapi di kursus ini kita akan mengikuti arahan khusus dari dokumentasi resmi Python yang dinamai [`venv`](https://docs.python.org/3/library/venv.html#module-venv).
 
-First, create the directory you'd like your application to live in — for example, you might want to make a new directory called *transformers-course* at the root of your home directory:
+Pertama, buatlah folder baru untuk menyimpan aplikasi yang akan dibuat. Sebagai contoh, anda mungkin akan membuat folder baru bernama *transformers-course* di root folder dari home directory komputer anda:
 
 ```
 mkdir ~/transformers-course
 cd ~/transformers-course
 ```
 
-From inside this directory, create a virtual environment using the Python `venv` module:
+Setelah masuk ke folder baru tersebut, buatlah _virtual environment_ menggunakan modul `venv` Python:
 
 ```
 python -m venv .env
 ```
 
-You should now have a directory called *.env* in your otherwise empty folder:
+Setelah menggunakan modul `venv`, anda akan memiliki folder baru bernama *.env*:
 
 ```
 ls -a
@@ -79,17 +79,17 @@ ls -a
 .      ..    .env
 ```
 
-You can jump in and out of your virtual environment with the `activate` and `deactivate` scripts:
+Instruksi dibawah adalah instruksi untuk mengaktifkan dan menonaktifkan _virtual environment_ yang baru saja dibuat:
 
 ```
-# Activate the virtual environment
+# Mengaktifkan virtual environment
 source .env/bin/activate
 
-# Deactivate the virtual environment
+# Menonaktifkan virtual environment
 source .env/bin/deactivate
 ```
 
-You can make sure that the environment is activated by running the `which python` command: if it points to the virtual environment, then you have successfully activated it!
+Anda bisa memastikan bahwa anda menggunakan Python versi _virtual environment_ dengan mengeksekusi `which python` di terminal: jika balasan terminal adalah Python di dalam folder *.env*, maka _virtual environment_ anda sudah aktif!
 
 ```
 which python
@@ -99,12 +99,12 @@ which python
 /home/<user>/transformers-course/.env/bin/python
 ```
 
-### Installing dependencies
+### Instalasi modul
 
-As in the previous section on using Google Colab instances, you'll now need to install the packages required to continue. Again, you can install the development version of 🤗 Transformers using the `pip` package manager:
+Sama seperti di Google Colab, anda perlu menginstal modul-modul yang diperlukan. Kali ini, instalasi versi _development_ 🤗 Transformers dapat dilakukan menggunakan _package manager_ `pip`:
 
 ```
 pip install "transformers[sentencepiece]"
 ```
 
-You're now all set up and ready to go!
+Sekarang anda siap untuk mulai belajar!

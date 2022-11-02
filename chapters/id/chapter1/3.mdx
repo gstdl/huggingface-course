@@ -1,4 +1,4 @@
-# Transformers, what can they do?
+# Apa yang bisa dilakukan oleh Transformers?
 
 <CourseFloatingBanner chapter={1}
   classNames="absolute z-10 right-0 top-0"
@@ -7,33 +7,32 @@
     {label: "Aws Studio", value: "https://studiolab.sagemaker.aws/import/github/huggingface/notebooks/blob/master/course/en/chapter1/section3.ipynb"},
 ]} />
 
-In this section, we will look at what Transformer models can do and use our first tool from the 🤗 Transformers library: the `pipeline()` function.
+Di sub-bab ini, anda akan mempelajari mengenai model-model Transformer. Termasuk mengenai apa yang bisa dilakukan dengan Transformer serta menggunakan fungsi `pipeline()` dari modul 🤗 Transformers.
 
 <Tip>
-👀 See that <em>Open in Colab</em> button on the top right? Click on it to open a Google Colab notebook with all the code samples of this section. This button will be present in any section containing code examples. 
-
-If you want to run the examples locally, we recommend taking a look at the <a href="/course/chapter0">setup</a>.
+Tombol <em>Open in Colab</em> di kanan atas akan membuka Google Colab notebook di tab baru. _Notebook_ ini mengandung semua sampel kode untuk sub-bab ini. Tombol ini akan muncul di setiap sub-bab yang memiliki sampel kode.
+Jika anda ingin menjalankan sampel kode di komputer anda, silahkan buka sub-bab <a href="/course/chapter0">setup</a>.
 </Tip>
 
-## Transformers are everywhere!
+## Transformers ada dimana-mana!
 
-Transformer models are used to solve all kinds of NLP tasks, like the ones mentioned in the previous section. Here are some of the companies and organizations using Hugging Face and Transformer models, who also contribute back to the community by sharing their models:
+Seperti yang disampaikan pada sub-bab sebelumnya, applikasi dari model-model Transformer dapat ditemui pada semua permasalahan NLP. Daftar perusahaan dan organisasi yang menggunakan Hugging Face dan model-model Transformer dapat dilihat pada gambar dibawah. Bukan hanya sebagai pengguna, perusahaan-perusahaan tersebut juga berkontribusi pada komunitas Hugging Face dengan membagikan model-model yang sudah mereka buat!
 
-<img src="https://huggingface.co/datasets/huggingface-course/documentation-images/resolve/main/en/chapter1/companies.PNG" alt="Companies using Hugging Face" width="100%">
+<img src="https://huggingface.co/datasets/huggingface-course/documentation-images/resolve/main/en/chapter1/companies.PNG" alt="Daftar perusahaan yang menggunkan Hugging Face" width="100%">
 
-The [🤗 Transformers library](https://github.com/huggingface/transformers) provides the functionality to create and use those shared models. The [Model Hub](https://huggingface.co/models) contains thousands of pretrained models that anyone can download and use. You can also upload your own models to the Hub!
+[Modul 🤗 Transformers](https://github.com/huggingface/transformers) menyediakan fungsi-fungsi untuk membuat model serta membagikan model tersebut ke seluruh dunia. [_Model Hub_](https://huggingface.co/models) adalah rumah dari ribuan _pretrained models_ (model-model yang sudah dilatih terlebih dahulu) dan model-model tersebut dapat diunduh dan digunakan oleh siapa saja. Anda juga dapat menunggah model buatan anda ke _Model Hub_!
 
 <Tip>
-⚠️ The Hugging Face Hub is not limited to Transformer models. Anyone can share any kind of models or datasets they want! <a href="https://huggingface.co/join">Create a huggingface.co</a> account to benefit from all available features!
+⚠️ Bukan hanya model-model Transformer, semua jenis model atau dataset dapat diunggah dan diunduh oleh siapa saja di _Hugging Face Hub_! Silahkan buat akun di <a href="https://huggingface.co/join">huggingface.co</a> untuk menggunkan semua fitur yang disediakan oleh tim Hugging Face!
 </Tip>
 
-Before diving into how Transformer models work under the hood, let's look at a few examples of how they can be used to solve some interesting NLP problems.
+Sebelum mempelajari alur pembuatan model Transformer, mari mempelajari beberapa contoh penggunaan model Transformer untuk menyelesaikan beberapa tantangan NLP yang cukup menarik.
 
-## Working with pipelines
+## Menggunakan `pipeline`
 
 <Youtube id="tiZFewofSLM" />
 
-The most basic object in the 🤗 Transformers library is the `pipeline()` function. It connects a model with its necessary preprocessing and postprocessing steps, allowing us to directly input any text and get an intelligible answer:
+Objek paling penting dari modul 🤗 Transformers adalah fungsi `pipeline()`. Ia berperan untuk menangani semua tahap-tahap penting dalam _machine learning_ seperti _preprocessing_ dan _postprocessing_ yang membuat model anda mampu memproses segala macam input teks dan memberikan jawaban yang sesuai:
 
 ```python
 from transformers import pipeline
@@ -46,7 +45,7 @@ classifier("I've been waiting for a HuggingFace course my whole life.")
 [{'label': 'POSITIVE', 'score': 0.9598047137260437}]
 ```
 
-We can even pass several sentences!
+Bukan hanya satu kalimat, tapi `pipeline()` mampu memproses beberapa kalimat sekaligus!
 
 ```python
 classifier(
